@@ -8,7 +8,7 @@ import javax.faces.bean.RequestScoped;
 public class LoginBean {
 	private String userName;
 	private String password;
-	private String errorMsg;
+	private String errMsg;
 	
 	public String getUserName() {
 		return userName;
@@ -22,27 +22,27 @@ public class LoginBean {
 	public void setPassword(String password) {
 		this.password = password;
 	}	
-	public String getErrorMsg() {
-		return errorMsg;
+	public String getErrMsg() {
+		return errMsg;
 	}
-	public void setErrorMsg(String errorMsg) {
-		this.errorMsg = errorMsg;
+	public void setErrMsg(String errMsg) {
+		this.errMsg = errMsg;
 	}
 	public String validate() {
 		if("admin".equals(this.userName) &&
 				"admin".equals(this.password)){
-			errorMsg=null;
+			errMsg=null;
 			return "welcome";
 		}
 		else {
-			errorMsg="Invalid user id or password. Please try again!";
+			errMsg="Invalid user id or password. Please try again!";
 			return null;
 		}
 	}
 	public String reset() {
 		this.userName = null;
 		this.password = null;
-		this.errorMsg = null;
+		this.errMsg = null;
 		return "index";
 	}
 
